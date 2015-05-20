@@ -8,6 +8,7 @@ endif;
 if ( function_exists('register_sidebars') ):
   register_sidebar(array(
     'name'=>'Sidebar',
+    "id"=>1,
     'before_title'=>'<h4>',
     'after_title'=>'</h4>'
   ));
@@ -48,4 +49,10 @@ function register_scripts() {
   }
 }
 add_action('wp_enqueue_scripts', 'register_scripts');
+
+
+// add options page
+if( function_exists('acf_add_options_page') ) {
+  acf_add_options_page();
+}
 ?>
